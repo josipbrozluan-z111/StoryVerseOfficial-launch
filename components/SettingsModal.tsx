@@ -3,7 +3,7 @@ import * as React from 'react';
 import { ProjectContext } from '../contexts/ProjectContext';
 import { Theme, Language } from '../types';
 import { THEME_CONFIG } from '../constants';
-import { CloseIcon, DownloadIcon, TrashIcon, GoogleIcon } from './Icons';
+import { CloseIcon, DownloadIcon, TrashIcon } from './Icons';
 import ConfirmModal from './ConfirmModal';
 import { useTranslations } from '../hooks/useTranslations';
 
@@ -20,7 +20,7 @@ const themeOptions: { name: Theme; label: string; colors: string[] }[] = [
 const SettingsModal = ({ isOpen, onClose }: SettingsModalProps) => {
   const { 
       projectData, theme, setProjectData, downloadProject, closeProject, 
-      themeClasses, projectName, storageMode, signOut, connectLocalToDrive
+      themeClasses, projectName
   } = React.useContext(ProjectContext);
   const t = useTranslations();
   const [isConfirmOpen, setIsConfirmOpen] = React.useState(false);
@@ -59,12 +59,8 @@ const SettingsModal = ({ isOpen, onClose }: SettingsModalProps) => {
     });
   };
 
-  const handleCloseOrSignOut = async () => {
-    if (storageMode === 'drive') {
-      await signOut();
-    } else {
-      await closeProject();
-    }
+  const handleCloseProject = async () => {
+    await closeProject();
   };
 
   const modalTextColor = theme === 'book' ? themeClasses.accentText : themeClasses.text;
@@ -78,10 +74,10 @@ const SettingsModal = ({ isOpen, onClose }: SettingsModalProps) => {
     return themeClasses.border;
   };
   
-  const storageLocation = storageMode === 'drive' ? 'Google Drive' : 'a local file';
-  const closeButtonText = storageMode === 'drive' ? t.signOutAndClose : t.closeProject;
-  const confirmTitle = storageMode === 'drive' ? t.signOutTitle : t.closeProjectTitle;
-  const confirmMessage = storageMode === 'drive' ? t.signOutMessage : t.closeProjectMessage;
+  const storageLocation = 'a local file';
+  const closeButtonText = t.closeProject;
+  const confirmTitle = t.closeProjectTitle;
+  const confirmMessage = t.closeProjectMessage;
 
 
   return (
@@ -156,12 +152,6 @@ const SettingsModal = ({ isOpen, onClose }: SettingsModalProps) => {
                 <p className="font-semibold mt-3">{t.storageLocation}</p>
                 <p className={`${descriptionColor} text-sm`}>{t.storageLocationText(storageLocation)}</p>
                 <div className="mt-4 grid grid-cols-1 gap-3">
-                  {storageMode === 'local' && (
-                    <button onClick={connectLocalToDrive} className="w-full flex items-center justify-center space-x-2 px-4 py-2 text-sm font-semibold rounded-lg transition-colors bg-white text-gray-800 hover:bg-gray-200">
-                      <GoogleIcon className="w-4 h-4" />
-                      <span>{t.connectToGDrive}</span>
-                    </button>
-                  )}
                   <button onClick={downloadProject} className={`w-full flex items-center justify-center space-x-2 px-4 py-2 text-sm font-semibold rounded-lg transition-colors ${themeClasses.bgSecondary} ${themeClasses.accentText} hover:opacity-80`}>
                     <DownloadIcon className="w-4 h-4" />
                     <span>{t.downloadACopy}</span>
@@ -179,7 +169,7 @@ const SettingsModal = ({ isOpen, onClose }: SettingsModalProps) => {
       <ConfirmModal
         isOpen={isConfirmOpen}
         onClose={() => setIsConfirmOpen(false)}
-        onConfirm={handleCloseOrSignOut}
+        onConfirm={handleCloseProject}
         title={confirmTitle}
         message={confirmMessage}
       />

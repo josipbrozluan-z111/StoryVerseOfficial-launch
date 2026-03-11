@@ -35,9 +35,7 @@ export const translations = {
 
     // Welcome Screen
     welcomeCreator: 'Welcome, Creator!',
-    welcomeMessage: 'Sign in with Google to save your work to the cloud, or work with a local file on your computer.',
-    signInWithGoogle: 'Sign in with Google',
-    or: 'OR',
+    welcomeMessage: 'Work with a local file on your computer.',
     createNew: 'Create New',
     openLocalFile: 'Open Local File',
     
@@ -47,7 +45,6 @@ export const translations = {
     ideaBox: 'Idea Box',
     sketches: 'Sketches',
     settings: 'Settings',
-    signOut: 'Sign Out',
     saveStatusUnsaved: 'Unsaved changes',
     saveStatusSaving: 'Saving...',
     saveStatusSaved: 'Saved!',
@@ -205,12 +202,8 @@ export const translations = {
     projectName: 'Project Name',
     storageLocation: 'Storage Location',
     storageLocationText: (location: string) => `Your project is saved in ${location}.`,
-    connectToGDrive: 'Connect to Google Drive',
     downloadACopy: 'Download a Copy',
     closeProject: 'Close Project',
-    signOutAndClose: 'Sign Out & Close',
-    signOutTitle: 'Sign Out?',
-    signOutMessage: "Are you sure you want to sign out? Your project is saved on Google Drive. You can sign back in to access it again.",
     closeProjectTitle: 'Close Project?',
     closeProjectMessage: "Are you sure you want to close this project? Any unsaved changes will be saved before closing. You can reopen it later from your files.",
 
@@ -254,9 +247,7 @@ export const translations = {
 
     // Welcome Screen
     welcomeCreator: 'Välkommen, skapare!',
-    welcomeMessage: 'Logga in med Google för att spara ditt arbete i molnet, eller arbeta med en lokal fil på din dator.',
-    signInWithGoogle: 'Logga in med Google',
-    or: 'ELLER',
+    welcomeMessage: 'Arbeta med en lokal fil på din dator.',
     createNew: 'Skapa ny',
     openLocalFile: 'Öppna lokal fil',
     
@@ -266,7 +257,6 @@ export const translations = {
     ideaBox: 'Idélåda',
     sketches: 'Skisser',
     settings: 'Inställningar',
-    signOut: 'Logga ut',
     saveStatusUnsaved: 'Osparade ändringar',
     saveStatusSaving: 'Sparar...',
     saveStatusSaved: 'Sparad!',
@@ -424,12 +414,8 @@ export const translations = {
     projectName: 'Projektnamn',
     storageLocation: 'Lagringsplats',
     storageLocationText: (location: string) => `Ditt projekt är sparat i ${location}.`,
-    connectToGDrive: 'Anslut till Google Drive',
     downloadACopy: 'Ladda ner en kopia',
     closeProject: 'Stäng projekt',
-    signOutAndClose: 'Logga ut & stäng',
-    signOutTitle: 'Logga ut?',
-    signOutMessage: "Är du säker på att du vill logga ut? Ditt projekt är sparat på Google Drive.",
     closeProjectTitle: 'Stäng projekt?',
     closeProjectMessage: "Är du säker på att du vill stänga detta projekt? Alla ändringar kommer att sparas.",
 
@@ -473,9 +459,7 @@ export const translations = {
 
     // Welcome Screen
     welcomeCreator: 'Chào mừng, Người sáng tạo!',
-    welcomeMessage: 'Đăng nhập bằng Google để lưu công việc của bạn lên đám mây hoặc làm việc với một tệp cục bộ trên máy tính của bạn.',
-    signInWithGoogle: 'Đăng nhập bằng Google',
-    or: 'HOẶC',
+    welcomeMessage: 'Làm việc với một tệp cục bộ trên máy tính của bạn.',
     createNew: 'Tạo mới',
     openLocalFile: 'Mở tệp cục bộ',
     
@@ -485,7 +469,6 @@ export const translations = {
     ideaBox: 'Hộp ý tưởng',
     sketches: 'Bản nháp',
     settings: 'Cài đặt',
-    signOut: 'Đăng xuất',
     saveStatusUnsaved: 'Thay đổi chưa được lưu',
     saveStatusSaving: 'Đang lưu...',
     saveStatusSaved: 'Đã lưu!',
@@ -643,12 +626,8 @@ export const translations = {
     projectName: 'Tên dự án',
     storageLocation: 'Vị trí lưu trữ',
     storageLocationText: (location: string) => `Dự án của bạn được lưu trong ${location}.`,
-    connectToGDrive: 'Kết nối với Google Drive',
     downloadACopy: 'Tải xuống bản sao',
     closeProject: 'Đóng dự án',
-    signOutAndClose: 'Đăng xuất & Đóng',
-    signOutTitle: 'Đăng xuất?',
-    signOutMessage: 'Bạn có chắc chắn muốn đăng xuất không? Dự án của bạn được lưu trên Google Drive. Bạn có thể đăng nhập lại để truy cập.',
     closeProjectTitle: 'Đóng dự án?',
     closeProjectMessage: 'Bạn có chắc chắn muốn đóng dự án này không? Mọi thay đổi chưa được lưu sẽ được lưu trước khi đóng. Bạn có thể mở lại sau từ các tệp của mình.',
 
@@ -692,9 +671,7 @@ export const translations = {
 
     // Welcome Screen
     welcomeCreator: 'Tervetuloa, luoja!',
-    welcomeMessage: 'Kirjaudu sisään Googlella tallentaaksesi työsi pilveen, tai työskentele paikallisen tiedoston kanssa tietokoneellasi.',
-    signInWithGoogle: 'Kirjaudu sisään Googlella',
-    or: 'TAI',
+    welcomeMessage: 'Työskentele paikallisen tiedoston kanssa tietokoneellasi.',
     createNew: 'Luo uusi',
     openLocalFile: 'Avaa paikallinen tiedosto',
     
@@ -704,7 +681,6 @@ export const translations = {
     ideaBox: 'Idealaatikko',
     sketches: 'Luonnokset',
     settings: 'Asetukset',
-    signOut: 'Kirjaudu ulos',
     saveStatusUnsaved: 'Tallentamattomia muutoksia',
     saveStatusSaving: 'Tallennetaan...',
     saveStatusSaved: 'Tallennettu!',
@@ -862,12 +838,8 @@ export const translations = {
     projectName: 'Projektin nimi',
     storageLocation: 'Tallennussijainti',
     storageLocationText: (location: string) => `Projektisi on tallennettu ${location}.`,
-    connectToGDrive: 'Yhdistä Google Driveen',
     downloadACopy: 'Lataa kopio',
     closeProject: 'Sulje projekti',
-    signOutAndClose: 'Kirjaudu ulos & Sulje',
-    signOutTitle: 'Kirjaudu ulos?',
-    signOutMessage: "Haluatko varmasti kirjautua ulos? Projektisi on tallennettu Google Driveen. Voit kirjautua takaisin sisään päästäksesi siihen uudelleen.",
     closeProjectTitle: 'Sulje projekti?',
     closeProjectMessage: "Oletko varma, että haluat sulkea tämän projektin? Kaikki tallentamattomat muutokset tallennetaan ennen sulkemista. Voit avata sen myöhemmin uudelleen tiedostoistasi.",
 

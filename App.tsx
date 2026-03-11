@@ -16,7 +16,7 @@ import StoryIdeaEditorPage from './pages/StoryIdeaEditorPage';
 import SketchesPage from './pages/SketchesPage';
 import SketchEditorPage from './pages/SketchEditorPage';
 import { THEME_CONFIG } from './constants';
-import { LoadingIcon, Bars3Icon, DocumentPlusIcon, UploadIcon, CloudIcon } from './components/Icons';
+import { LoadingIcon, Bars3Icon, DocumentPlusIcon } from './components/Icons';
 import { Theme, Language } from './types';
 import { LanguageContext } from './contexts/LanguageContext';
 import { translations } from './utils/translations';
@@ -104,80 +104,9 @@ const AppContent = () => {
             case 'welcome':
                 return (
                     <WelcomeScreen 
-                        onGoogleSignIn={project.signInWithGoogle}
                         onCreateLocalProject={project.createLocalProject}
                         onOpenLocalProject={project.openLocalProject}
                     />
-                );
-            case 'drive-no-project':
-                return (
-                     <div className={`flex flex-col items-center justify-center h-screen ${themeClasses.bg} ${themeClasses.text}`}>
-                        <div className={`w-full max-w-lg p-8 text-center rounded-lg ${themeClasses.bgSecondary}`}>
-                            <h2 className={`text-2xl font-bold mb-2 ${themeClasses.accentText}`}>Welcome, {project.userProfile?.email}!</h2>
-                            <p className={`${themeClasses.accentText} opacity-80 mb-6`}>
-                            No StoryVerse project was found on your Google Drive. Get started by creating a new project or uploading an existing one.
-                            </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button
-                                onClick={() => project.createProjectOnDrive()}
-                                className={`flex items-center justify-center w-full sm:w-auto px-6 py-3 text-lg font-semibold rounded-lg ${themeClasses.accent} ${themeClasses.accentText} hover:opacity-90`}
-                            >
-                                <DocumentPlusIcon className="w-6 h-6 mr-3" />
-                                Create New Project
-                            </button>
-                            <button
-                                onClick={project.uploadProjectToDrive}
-                                className={`flex items-center justify-center w-full sm:w-auto px-6 py-3 text-lg font-semibold rounded-lg ${themeClasses.bgTertiary} ${themeClasses.accentText} hover:opacity-80`}
-                            >
-                                <UploadIcon className="w-6 h-6 mr-3" />
-                                Upload Local Project
-                            </button>
-                            </div>
-                            <div className="mt-8 text-center">
-                                <button onClick={() => project.signOut()} className={`text-sm ${themeClasses.textSecondary} hover:underline`}>
-                                    Sign Out & Use Local File
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                );
-            case 'drive-conflict':
-                 return (
-                    <div className={`flex flex-col items-center justify-center h-screen ${themeClasses.bg} ${themeClasses.text}`}>
-                        <div className={`w-full max-w-xl p-8 text-center rounded-lg ${themeClasses.bgSecondary}`}>
-                            <h2 className={`text-2xl font-bold mb-2 ${themeClasses.accentText}`}>Project Conflict</h2>
-                            <p className={`${themeClasses.accentText} opacity-80 mb-6`}>
-                                You have a project saved locally and another on Google Drive. How would you like to proceed?
-                            </p>
-                            <div className="space-y-4">
-                                <button
-                                    onClick={project.overwriteDriveProject}
-                                    className={`flex flex-col items-center justify-center w-full px-6 py-4 text-lg font-semibold rounded-lg ${themeClasses.accent} ${themeClasses.accentText} hover:opacity-90`}
-                                >
-                                    <div className="flex items-center">
-                                        <UploadIcon className="w-6 h-6 mr-3" />
-                                        <span>Upload Local Project</span>
-                                    </div>
-                                    <span className="text-sm font-normal opacity-80 mt-1">This will overwrite the project on Google Drive.</span>
-                                </button>
-                                <button
-                                    onClick={project.loadDriveProjectAndDiscardLocal}
-                                    className={`flex flex-col items-center justify-center w-full px-6 py-4 text-lg font-semibold rounded-lg ${themeClasses.bgTertiary} ${themeClasses.accentText} hover:opacity-80`}
-                                >
-                                    <div className="flex items-center">
-                                        <CloudIcon className="w-6 h-6 mr-3" />
-                                        <span>Use Cloud Project</span>
-                                    </div>
-                                    <span className="text-sm font-normal opacity-80 mt-1">Your local changes will not be uploaded.</span>
-                                </button>
-                            </div>
-                             <div className="mt-8 text-center">
-                                <button onClick={() => project.signOut()} className={`text-sm ${themeClasses.textSecondary} hover:underline`}>
-                                    Sign Out & Cancel
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                 );
             case 'ready':
                 if (!project.projectData) return null;

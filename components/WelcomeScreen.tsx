@@ -1,14 +1,13 @@
 import * as React from 'react';
-import { AppLogoIcon, GoogleIcon, DocumentPlusIcon, FolderIcon } from './Icons';
+import { AppLogoIcon, DocumentPlusIcon, FolderIcon } from './Icons';
 import { useTranslations } from '../hooks/useTranslations';
 
 interface WelcomeScreenProps {
-  onGoogleSignIn: () => void;
   onCreateLocalProject: () => void;
   onOpenLocalProject: () => void;
 }
 
-const WelcomeScreen = ({ onGoogleSignIn, onCreateLocalProject, onOpenLocalProject }: WelcomeScreenProps) => {
+const WelcomeScreen = ({ onCreateLocalProject, onOpenLocalProject }: WelcomeScreenProps) => {
   const t = useTranslations();
 
   return (
@@ -30,20 +29,6 @@ const WelcomeScreen = ({ onGoogleSignIn, onCreateLocalProject, onOpenLocalProjec
         </div>
 
         <div className="mt-8 flex flex-col space-y-4">
-            <button
-              onClick={onGoogleSignIn}
-              className="flex items-center justify-center w-full px-6 py-4 text-lg font-semibold rounded-lg bg-white text-gray-800 hover:bg-gray-200 transition-colors shadow-lg"
-            >
-              <GoogleIcon className="w-6 h-6 mr-3" />
-              {t.signInWithGoogle}
-            </button>
-
-            <div className="relative flex py-2 items-center">
-                <div className="flex-grow border-t border-slate-600"></div>
-                <span className="flex-shrink mx-4 text-slate-400 text-sm">{t.or}</span>
-                <div className="flex-grow border-t border-slate-600"></div>
-            </div>
-
             <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={onCreateLocalProject}
