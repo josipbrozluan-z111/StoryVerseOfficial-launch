@@ -36,6 +36,8 @@ export const translations = {
     // Welcome Screen
     welcomeCreator: 'Welcome, Creator!',
     welcomeMessage: 'Work with a local file on your computer.',
+    signInWithGoogle: 'Sign in with Google',
+    or: 'OR',
     createNew: 'Create New',
     openLocalFile: 'Open Local File',
     
@@ -248,6 +250,8 @@ export const translations = {
     // Welcome Screen
     welcomeCreator: 'Välkommen, skapare!',
     welcomeMessage: 'Arbeta med en lokal fil på din dator.',
+    signInWithGoogle: 'Logga in med Google',
+    or: 'ELLER',
     createNew: 'Skapa ny',
     openLocalFile: 'Öppna lokal fil',
     
@@ -460,6 +464,8 @@ export const translations = {
     // Welcome Screen
     welcomeCreator: 'Chào mừng, Người sáng tạo!',
     welcomeMessage: 'Làm việc với một tệp cục bộ trên máy tính của bạn.',
+    signInWithGoogle: 'Đăng nhập bằng Google',
+    or: 'HOẶC',
     createNew: 'Tạo mới',
     openLocalFile: 'Mở tệp cục bộ',
     
@@ -672,6 +678,8 @@ export const translations = {
     // Welcome Screen
     welcomeCreator: 'Tervetuloa, luoja!',
     welcomeMessage: 'Työskentele paikallisen tiedoston kanssa tietokoneellasi.',
+    signInWithGoogle: 'Kirjaudu sisään Googlella',
+    or: 'TAI',
     createNew: 'Luo uusi',
     openLocalFile: 'Avaa paikallinen tiedosto',
     

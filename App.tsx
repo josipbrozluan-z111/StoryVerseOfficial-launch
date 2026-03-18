@@ -22,6 +22,9 @@ import { LanguageContext } from './contexts/LanguageContext';
 import { translations } from './utils/translations';
 import { useTranslations } from './hooks/useTranslations';
 
+import { auth } from './firebase';
+import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+
 const NovelEditRedirect = () => {
     const { novelId } = useParams<{ novelId: string }>();
     const { projectData } = React.useContext(ProjectContext);
@@ -93,6 +96,18 @@ const AppContent = () => {
     const onSketchEditPage = useMatch('/novel/:novelId/sketch/:sketchId/edit');
     const isSidebarPermanentlyHidden = !!onEditPage || !!onReadPage || !!onIdeaEditPage || !!onSketchEditPage;
 
+    const handleSignInWithGoogle = async () => {
+        try {
+            const provider = new GoogleAuthProvider();
+            await signInWithPopup(auth, provider);
+            // After successful sign in, you can handle loading cloud projects here
+            console.log("Successfully signed in with Google!");
+        } catch (error) {
+            console.error("Error signing in with Google:", error);
+            alert("Failed to sign in with Google.");
+        }
+    };
+
     const renderContent = () => {
         switch (project.status) {
             case 'loading':
@@ -106,6 +121,7 @@ const AppContent = () => {
                     <WelcomeScreen 
                         onCreateLocalProject={project.createLocalProject}
                         onOpenLocalProject={project.openLocalProject}
+                        onSignInWithGoogle={handleSignInWithGoogle}
                     />
                 );
             case 'ready':
