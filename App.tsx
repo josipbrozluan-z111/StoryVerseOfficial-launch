@@ -102,9 +102,9 @@ const AppContent = () => {
             await signInWithPopup(auth, provider);
             // After successful sign in, you can handle loading cloud projects here
             console.log("Successfully signed in with Google!");
-        } catch (error) {
+        } catch (error: any) {
             console.error("Error signing in with Google:", error);
-            alert("Failed to sign in with Google.");
+            alert(`Failed to sign in with Google: ${error.message || "Unknown error"}`);
         }
     };
 
